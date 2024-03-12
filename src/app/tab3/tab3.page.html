@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Point
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <body>
+
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    
+    <div class="button-container">
+      <input type="text"  placeholder="Typing.." [(ngModel)]="input">
+      <button (click)="inputt()">
+        <ion-icon name="file-tray-full-outline"></ion-icon></button>
+    </div>
+
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Matakuliah</th>
+          <th>Dosen</th>
+          <th>Point</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of allData">
+          <td class="text-white">{{data.kd_mk}}</td>
+          <td class="text-white">{{data.mtkuliah}}</td>
+          <td class="text-white">{{data.dosen}}</td>
+          <td class="text-white">{{data.point}}</td>
+          <td class="text-white">{{data.grade}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</ion-content>

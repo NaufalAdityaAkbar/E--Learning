@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Schedule
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <body>
+    <main>
+      <div class="chat-container">
+        <ul class="chat">
+          <li class="message left">
+            <img class="logo" src="assets/unbin.jpg" alt="">
+            <p style="color: black;">Information Schedule Teknik Informatika</p>
+          </li>
+        </ul>
+      </div>
+      <div class="chat-container">
+        <ul class="chat">
+          <li class="message right" *ngFor="let message of messages">
+            <img class="logo" src="assets/pngeg2.png" alt="">
+            <p style="color: black;">{{ message }}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="chat-container" *ngIf="showSecondElement1">
+        <ul class="chat">
+          <li class="message left" *ngFor="let data of allData">
+            <img class="logo" src="assets/unbin.jpg" alt="">
+            <p style="color: black;" *ngIf="showPopUp1">Hari:{{ data.hari }}</p>
+            <p style="color: black;" *ngIf="showPopUp1">Matakuliah:{{ data.Matakuliah }}</p>
+            <p style="color: black;" *ngIf="showPopUp1">Dosen:{{ data.Dosen }}</p>
+            <p style="color: black;" *ngIf="showPopUp2">Tidak Ada Jadwal Tersedia!</p>
+          </li>
+        </ul>
+      </div> 
+    </main> 
+
+    <div class="button-container">
+      <input type="text" id="Input" placeholder="Typing.." [(ngModel)]="inputMessage">
+      <button (click)="sendMessage()">
+        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+      </button>
+    </div>
+
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+  </body>
+</ion-content>

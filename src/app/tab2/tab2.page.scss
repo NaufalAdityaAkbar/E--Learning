@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+ion-header {
+  background-color: #f0bb4a;
+}
+
+body {
+  background: linear-gradient(to top, #368ae5, #f0bb4a);
+
+}
+
+main {
+  position: relative;
+  height: 590px;
+  overflow-y: auto;
+}
+
+h1 {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.message {
+  background-color: rgba(255, 255, 255, 0.397);
+  border-radius: 30px;
+  position: relative;
+  margin: 10px;
+
+}
+
+.message.left {
+  padding: 15px 20px 15px 70px;
+}
+
+.message.right {
+  align-self: flex-end;
+  padding: 15px 70px 15px 20px;
+
+}
+
+.logo {
+  border-radius: 50%;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.7);
+  object-fit: cover;
+  position: absolute;
+  left: 9px;
+  top: -8px;
+  width: 50px;
+  height: 50px;
+}
+
+.message.right .logo {
+  left: auto;
+  right: 10px;
+}
+
+.message p {
+  margin: 0;
+  text-indent: 1em;
+}
+
+.text_input {
+  font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.imag img {
+  width: 200px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.img img {
+  width: auto;
+  height: 90px;
+  margin-right: 5px;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 8%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+input {
+  flex: 1;
+  width: 83%;
+  padding: 5px;
+  margin-right: 5px;
+  background-color: #ffffffdc;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #f0bb4ade;
+  color: #ffffff;
+  border: none;
+}
+
+button:hover {
+  background-color: #e7d547d2;
+}
